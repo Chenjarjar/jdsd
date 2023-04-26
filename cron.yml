@@ -1,0 +1,5 @@
+
+cron:
+- description: "Daily job"
+  url: https://raw.githubusercontent.com/Chenjarjar/-/main/%E7%BB%8F%E5%85%B8%E8%AF%B5%E8%AF%BB.py?token=GHSAT0AAAAAACATJVB4Q2IG2LM6VK464PYGZCIVRUQ
+  schedule: "0 8 * * *"
