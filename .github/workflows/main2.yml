@@ -20,3 +20,7 @@ jobs:
         run: python 经典诵读.py
       - name: run python program
         run: python 宝宝.py
+      - name: Run Python program
+        run: python 差700.py
+      - name: Run Python program
+        run: python 差400.py
