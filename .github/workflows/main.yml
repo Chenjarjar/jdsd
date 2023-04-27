@@ -17,4 +17,8 @@ jobs:
     - name: Run Python script
       run: python 差400.py
     - name: Run Python script
-      run: python 差700.py 
+      run: python 差700.py
+    - name: Run Python script
+      run: python 780-1500.py
+    - name: Run Python script
+      run: python 嘉蔚.py
