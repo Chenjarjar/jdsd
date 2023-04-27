@@ -14,3 +14,7 @@ jobs:
       run: python 经典诵读.py
     - name: Run Python script
       run: python 宝宝.py  
+    - name: Run Python script
+      run: python 差400.py
+    - name: Run Python script
+      run: python 差700.py 
