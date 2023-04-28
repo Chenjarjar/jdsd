@@ -2,7 +2,7 @@ name: Daily job
 
 on:
   schedule:
-    - cron: "00 0 * * *"
+    - cron: "20 1 * * *"
 
 jobs:
   run:
@@ -10,14 +10,7 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-    - name: Run Python script
-      run: python 经典诵读.py
-    - name: Run Python script
-      run: python 宝宝.py  
-    - name: Run Python script
-      run: python 差400.py
-    - name: Run Python script
-      run: python 差700.py
+  
     - name: Run Python script
       run: python 780-1500.py
     - name: Run Python script
