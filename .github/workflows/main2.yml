@@ -1,11 +1,11 @@
-name:  自动化
+name: 自动化
 
 on:
   schedule:
     - cron: '01 22 * * *'
 
 jobs:
-  build:
+  jingdiansongdu:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -16,15 +16,61 @@ jobs:
           python-version: '3.10'
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Run Python program
+      - name: Run 经典诵读.py
         run: python 经典诵读.py
-      - name: run python program
+
+  baobao:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run 宝宝.py
         run: python 宝宝.py
-      - name: Run Python program
+
+  cha700:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run 差700.py
         run: python 差700.py
-      - name: Run Python program
+
+  cha400:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run 差400.py
         run: python 差400.py
-      - name: Run Python program
+
+  cha1800:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run 差1800.py
         run: python 差1800.py
-    
-      
