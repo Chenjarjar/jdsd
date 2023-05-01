@@ -8,7 +8,7 @@ on:
 jobs:
   jingdiansongdu:
     runs-on: ubuntu-latest
-    continue-on-error: true # 加上这一行
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -20,21 +20,15 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run 经典诵读.py
         run: python 经典诵读.py
-      - name: Check status and retry if failed
-        uses: rlespinasse/github-super-linter@v5.2.0
-        with:
-          fail_on_error: false
-          only_changed_files: false
-          pattern: ''
-          display_mode: 'full'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RETRY_WAIT_TIME_SECONDS: 180 # 重试等待时间，单位为秒
-          MAX_RETRIES: 3 # 最大重试次数
+
+
+
+
+
 
   baobao:
     runs-on: ubuntu-latest
-    continue-on-error: true # 加上这一行
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -46,21 +40,11 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run 宝宝.py
         run: python 宝宝.py
-      - name: Check status and retry if failed
-        uses: rlespinasse/github-super-linter@v5.2.0
-        with:
-          fail_on_error: false
-          only_changed_files: false
-          pattern: ''
-          display_mode: 'full'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RETRY_WAIT_TIME_SECONDS: 180 # 重试等待时间，单位为秒
-          MAX_RETRIES: 3 # 最大重试次数
+
 
   cha700:
     runs-on: ubuntu-latest
-    continue-on-error: true # 加上这一行
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -72,21 +56,10 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run 差700.py
         run: python 差700.py
-      - name: Check status and retry if failed
-        uses: rlespinasse/github-super-linter@v5.2.0
-        with:
-          fail_on_error: false
-          only_changed_files: false
-          pattern: ''
-          display_mode: 'full'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RETRY_WAIT_TIME_SECONDS: 180 # 重试等待时间，单位为秒
-          MAX_RETRIES: 3 # 最大重试次数
 
   cha400:
     runs-on: ubuntu-latest
-    continue-on-error: true # 加上这一行
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -98,21 +71,11 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run 差400.py
         run: python 差400.py
-      - name: Check status and retry if failed
-        uses: rlespinasse/github-super-linter@v5.2.0
-        with:
-          fail_on_error: false
-          only_changed_files: false
-          pattern: ''
-          display_mode: 'full'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RETRY_WAIT_TIME_SECONDS: 180 # 重试等待时间，单位为秒
-          MAX_RETRIES: 3 # 最大重试次数
+
 
   cha1800:
     runs-on: ubuntu-latest
-    continue-on-error: true # 加上这一行
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -124,14 +87,3 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run 差1800.py
         run: python 差1800.py
-      - name: Check status and retry if failed
-        uses: rlespinasse/github-super-linter@v5.2.0
-        with:
-          fail_on_error: false
-          only_changed_files: false
-          pattern: ''
-          display_mode: 'full'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RETRY_WAIT_TIME_SECONDS: 180 # 重试等待时间，单位为秒
-          MAX_RETRIES: 3 # 最大重试次数
