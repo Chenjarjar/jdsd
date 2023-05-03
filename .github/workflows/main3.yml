@@ -32,3 +32,11 @@ jobs:
   
     - name: Run Python script
       run: python 差1162.py
+  like:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+  
+    - name: Run Python script
+      run: python 李可767-2000.py
