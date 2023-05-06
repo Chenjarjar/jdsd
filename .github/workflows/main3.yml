@@ -56,7 +56,7 @@ jobs:
   
     - name: Run Python script
       run: python 何啸.py
-  waxi:
+  wangxi:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
