@@ -74,3 +74,18 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run 差1800.py
         run: python 差1800.py
+        
+  kaoshi1500:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Run 考试+1500.py
+        run: python 考试+1500.py
