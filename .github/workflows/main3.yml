@@ -72,3 +72,12 @@ jobs:
   
     - name: Run Python script
       run: python 考试2000或3000.py
+  zhangmingdong:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+  
+    - name: Run Python script
+      run: python 张明东考试1500.py
+
