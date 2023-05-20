@@ -7,7 +7,7 @@ import time
 '''从 ·
 下方填写key 需抓包  key在更换微信登录后会改变 
 '''
-key_list = ['rATCO86a/Yp3Q2JLnvfhe1f/EJ586G6oEjRffL20VAK0BXnUGWAK3xlPapjyOjSo']
+key_list = ['Nkyukx2hYFekEYsDvu32JdNZYLK9kp5o7JVC2jde2N/IIJiHurQVUOTs3K/p9+wY']
 session = requests.session()
 headers = {
     'Host': 'jdsd.gzhu.edu.cn',
