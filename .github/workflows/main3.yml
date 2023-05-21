@@ -6,14 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  cha820:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-  
-    - name: Run Python script
-      run: python 差820.py
+
 
   jiawei:
     runs-on: ubuntu-latest
