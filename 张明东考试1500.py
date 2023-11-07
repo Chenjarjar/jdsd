@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Mar 29 20:57:31 2023
+Created on Wed 3月29日 20:57:31 2023
 
 @author: win
 """
@@ -14,14 +14,14 @@ import time
 '''
 下方填写key 需抓包  key在更换微信登录后会改变 
 '''
-key_list = ['X48/2Xt1Y6F2J7WyYUiUEUZHEMWKGJAxrOTVHb7rvlAzxgOxhotJS1QAVyBPh6lO']
+key_list = ['mWR0KAcmdYOJPo5VAuHbiFa3L1qB3aK/fZZf7tSCxX4r9fV8Kdm4tAhd6VyuzMBT']
 session = requests.session()
 headers = {
-    'Host': 'jdsd.gzhu.edu.cn',
-    'Accept': '*/*',
+    'Host': 'jdsd.gzhu.edu.cn'，
+    'Accept': '*/*'，
     'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) '
-                  'Mobile/15E148 MicroMessenger/8.0.2(0x18000233) NetType/WIFI Language/en',
-    'Referer': 'https://servicewechat.com/wxb78a5743a9eed5bf/15/page-frame.html',
+                  'Mobile/15E148 MicroMessenger/8.0.2(0x18000233) NetType/WIFI Language/en'，
+    'Referer': 'https://servicewechat.com/wxb78a5743a9eed5bf/15/page-frame.html'，
     'Accept-Language': 'en-us'
 }
 session.headers = headers
@@ -32,7 +32,7 @@ def get_info():
     # 获取个人信息 name:名字 today:今日获得积分 total:总积分
     flag = False
     info_data = {
-        'route': 'user_info',
+        'route': 'user_info'，
         'key': key
     }
     res = session.post(url, data=info_data).json()
