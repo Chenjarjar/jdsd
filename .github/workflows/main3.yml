@@ -17,14 +17,6 @@ jobs:
     - name: Run Python script
       run: python 嘉蔚.py
 
-  cha1162:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-  
-    - name: Run Python script
-      run: python 差1162.py
 
 
   hexiao:
