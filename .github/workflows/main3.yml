@@ -1,6 +1,6 @@
 name: Daily job
 
-on:
+于:
   schedule:
     - cron: "21 22 * * *"
   workflow_dispatch:
@@ -33,14 +33,7 @@ jobs:
   
     - name: Run Python script
       run: python 李可767-2000.py
-  cha2200:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-  
-    - name: Run Python script
-      run: python 差2200.py
+
   hexiao:
     runs-on: ubuntu-latest
     steps:
@@ -67,12 +60,4 @@ jobs:
     - name: Run Python script
       run: python 张明东考试1500.py
       
-  cha1000:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-  
-    - name: Run Python script
-      run: python 差1000.py
 
