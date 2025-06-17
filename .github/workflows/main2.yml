@@ -17,8 +17,8 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install dependencies
-        run: pip install -r GZHU_LIbraryAutoReserve_sign/requirements.txt
+        run: pip install -r GZHU_LibraryAutoReserve_sign/requirements.txt
       - name: Run python
-        run: python GZHU_LIbraryAutoReserve_sign/reserve.py
+        run: python GZHU_LibraryAutoReserve_sign/reserve.py
 
 
