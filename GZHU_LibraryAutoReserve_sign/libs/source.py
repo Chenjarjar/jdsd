@@ -148,7 +148,7 @@ class ZWYT(object):
 
             if json_path.exists() is False:
                 json_path = (
-                    Path().cwd() / f"json/{filename.upper()}.json"
+                    Path().cwd() / f"GZHU_LibraryAutoReserve_sign/json/{filename.upper()}.json"
                 )  # 准备打开的 json 文件的路径, 再用大写
 
         # 打开对应的 json 文件
