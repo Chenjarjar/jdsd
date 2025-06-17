@@ -142,8 +142,10 @@ class ZWYT(object):
         if filename[0] == "M":
             json_path = Path().cwd() / "json/琴房.json"  # 准备打开的 json 文件的路径
         else:
-            json_path = (
-                Path().cwd() / f"json/{filename.lower()}.json"
+            # 获取 source.py 所在目录的父目录
+            base_dir = Path(__file__).parent.parent
+            json_path = ( 
+                base_dir / f"json/{filename.lower()}.json"
             )  # 准备打开的 json 文件的路径, 先用小写
 
             if json_path.exists() is False:
