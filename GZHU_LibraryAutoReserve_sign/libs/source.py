@@ -295,10 +295,6 @@ class ZWYT(object):
             reserve_days.extend(
                 [
                     {
-                        "start": f"{t_year}-{t_month}-{t_day} {period[0]}",  # 今天--起始时间
-                        "end": f"{t_year}-{t_month}-{t_day} {period[-1]}",  # 今天--结束时间
-                    },
-                    {
                         "start": f"{n_year}-{n_month}-{n_day} {period[0]}",  # 明天--起始时间
                         "end": f"{n_year}-{n_month}-{n_day} {period[-1]}",  # 明天--结束时间
                     },
