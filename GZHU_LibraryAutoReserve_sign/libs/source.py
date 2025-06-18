@@ -419,6 +419,7 @@ class ZWYT(object):
 
         # 获取返回的信息
         message = res2.json().get("message")
+        print(message)
 
         # 签到成功
         if message == "操作成功":
