@@ -1,48 +1,28 @@
-name: Daily job
+name: 图书馆签到
 
 on:
   schedule:
-    - cron: "21 22 * * *"
+    - cron: "00 01 * * *"
+    - cron: "00 06 * * *"
+    - cron: "00 11 * * *"
   workflow_dispatch:
-
 jobs:
-
-
-  jiawei:
+  record:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-  
-    - name: Run Python script
-      run: python 嘉蔚.py
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -r GZHU_LibraryAutoReserve_sign/requirements.txt
+      - name: Run python
+        run: python GZHU_LibraryAutoReserve_sign/sign.py
 
 
 
-  hexiao:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-  
-    - name: Run Python script
-      run: python 何啸.py
-  wangxi:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-  
-    - name: Run Python script
-      run: python 王曦.py
-
-  zhangmingdong:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-  
-    - name: Run Python script
-      run: python 张明东考试1500.py
       
 
