@@ -123,7 +123,7 @@ class ZWYT(object):
         params = {"roomIds": "100647013", "resvDates": "20230514", "sysKind": "8"}
 
         res = self.rr.get(
-            url=self.urls["reserve"], params=params, headers=self.headers, timeout=60
+            url=self.urls["reserve"], params=params, headers=self.headers, timeout=10
         )
         json_data = res.json()
 
@@ -150,7 +150,7 @@ class ZWYT(object):
 
             if json_path.exists() is False:
                 json_path = (
-                    Path().cwd() / f"GZHU_LibraryAutoReserve_sign/json/{filename.upper()}.json"
+                    base_dir / f"json/{filename.upper()}.json"
                 )  # 准备打开的 json 文件的路径, 再用大写
 
         # 打开对应的 json 文件
@@ -176,7 +176,7 @@ class ZWYT(object):
         获取用户的 appAccNo
         """
         # 请求接口
-        res = self.rr.get(url=self.urls["userinfo"], cookies=self.cookies, timeout=60)
+        res = self.rr.get(url=self.urls["userinfo"], cookies=self.cookies, timeout=10)
         return res.json().get("data").get("accNo")
 
     def passwordReset(self):
@@ -194,7 +194,7 @@ class ZWYT(object):
             return
 
         res = self.rr.get(
-            url=self.urls["login_url"], timeout=60
+            url=self.urls["login_url"], timeout=10
         )  # 请求登录url获取一些参数
         html = etree.HTML(res.text)
 
@@ -213,7 +213,7 @@ class ZWYT(object):
             "_eventId": "submit",
         }
         url = self.urls["login_url"]
-        res = self.rr.post(url=url, data=data, timeout=60)
+        res = self.rr.post(url=url, data=data, timeout=10)
 
         if re.findall("密码重置", res.text):
             self.passwordReset()
@@ -223,7 +223,7 @@ class ZWYT(object):
 
         url = f"""{re.findall('service=(.*)', url)[0]}?ticket={ticket}"""
         url = unquote(url)
-        location = self.rr.get(url=url, timeout=60).headers.get("Location")
+        location = self.rr.get(url=url, timeout=10).headers.get("Location")
         location = unquote(location)
 
         unitoken = re.findall("uniToken=(.*)", str(location))[0]  # 获取unitoken
@@ -240,7 +240,7 @@ class ZWYT(object):
             url="http://libbooking.gzhu.edu.cn/ic-web//auth/token",
             params=params,
             headers=self.headers,
-            timeout=60,
+            timeout=10,
         )
 
         icc = get_cookie_res.headers.get("Set-Cookie")
@@ -260,11 +260,11 @@ class ZWYT(object):
 
         # 从data里面获取一个url
         url = self.urls["findaddress"]
-        address = self.rr.get(url=url, params=params, timeout=60).json().get("data")
+        address = self.rr.get(url=url, params=params, timeout=10).json().get("data")
 
         # 将上面获取到的url 作为请求参数
         url = url = f"{self.urls['get_location']}?redirectUrl={address}"
-        res = self.rr.get(url=url, timeout=60)
+        res = self.rr.get(url=url, timeout=10)
 
         self.urls["login_url"] = res.headers.get("Location")
 
@@ -344,7 +344,7 @@ class ZWYT(object):
                 headers=self.headers,
                 json=json_data,
                 cookies=self.cookies,
-                timeout=60,
+                timeout=10,
             )
 
             # 将服务器返回数据解析为 json
@@ -388,7 +388,7 @@ class ZWYT(object):
             url=lurl,
             json={"devSn": devSn, "type": "1", "bind": 0, "loginType": 2},
             cookies=self.cookies,
-            timeout=60,
+            timeout=10,
         )
 
         # 返回的json数据
@@ -414,7 +414,7 @@ class ZWYT(object):
 
         # 签到接口
         res2 = self.rr.post(
-            url=url, json={"resvId": resvId}, cookies=self.cookies, timeout=60
+            url=url, json={"resvId": resvId}, cookies=self.cookies, timeout=10
         )
 
         # 获取返回的信息
