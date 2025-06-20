@@ -390,10 +390,10 @@ class ZWYT(object):
             cookies=self.cookies,
             timeout=10,
         )
-
+    
         # 返回的json数据
         res1_data = res1.json()
-
+        print(res1_data)
         # 预约座位的编号不对
         if res1_data.get("data") is None:
             logger.warning(f"{self.name}" + f"{res1_data.get('message')}")
