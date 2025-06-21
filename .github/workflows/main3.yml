@@ -10,11 +10,15 @@ on:
     - cron: "55 23 * * *"
     - cron: "00 00 * * *"
     - cron: "45 05 * * *"
+    - cron: "50 05 * * *"
+    - cron: "55 05 * * *"
     - cron: "00 06 * * *"
-    - cron: "15 06 * * *"
+    - cron: "05 06 * * *"
     - cron: "45 10 * * *"
+    - cron: "50 10 * * *"
+    - cron: "55 10 * * *"
+    - cron: "05 11 * * *"
     - cron: "00 11 * * *"
-    - cron: "15 11 * * *"
   workflow_dispatch:
 jobs:
   record:
